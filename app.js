@@ -12,7 +12,9 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(cors());
 
+//My routes
 const authRoutes = require("./routes/auth");
+const userRoutes = require("./routes/user");
 
 //DB Connections
 mongoose
@@ -30,6 +32,7 @@ mongoose
 
 //My Routes
 app.use("/api", authRoutes);
+app.use("/api", userRoutes);
 
 // Starting server
 app.listen(port, () => {
