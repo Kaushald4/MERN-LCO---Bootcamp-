@@ -15,6 +15,7 @@ app.use(cors());
 //My routes
 const authRoutes = require("./routes/auth");
 const userRoutes = require("./routes/user");
+const categoryRoutes = require("./routes/category");
 
 //DB Connections
 mongoose
@@ -33,6 +34,7 @@ mongoose
 //My Routes
 app.use("/api", authRoutes);
 app.use("/api", userRoutes);
+app.use("/api", categoryRoutes);
 
 // Starting server
 app.listen(port, () => {
